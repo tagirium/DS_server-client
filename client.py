@@ -7,9 +7,9 @@ SEPARATOR = "<SEPARATOR>"
 BUFFER_SIZE = 4096
 
 host = "3.90.169.240"
-port = 22
-
+port = 6665
 filename = sys.argv[1]
+
 filesize = os.path.getsize(filename)
 s = socket.socket()
 print(f"[+] Connecting to {host}:{port}")

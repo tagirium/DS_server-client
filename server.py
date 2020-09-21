@@ -3,7 +3,7 @@ import tqdm
 import os
 
 SERVER_HOST = "0.0.0.0"
-SERVER_PORT = 5001
+SERVER_PORT = 6665
 
 BUFFER_SIZE = 4096
 SEPARATOR = "<SEPARATOR>"
@@ -21,7 +21,7 @@ filename = os.path.basename(filename)
 filesize = int(filesize)
 
 while os.path.isfile(filename):
-	filename = filename + '_new'
+	filename = filename.split('.')[0] + '_new' + ''.join(filename.split('.')[1:])
 
 progress = tqdm.tqdm(range(filesize), f"Receiving {filename}", unit="B", unit_scale=True, unit_divisor=1024)
 with open(filename, "wb") as f:
