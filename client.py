@@ -8,7 +8,7 @@ BUFFER_SIZE = 4096
 
 filename = sys.argv[1]
 host = sys.argv[2]
-port = sys.argv[3]
+port = int(sys.argv[3])
 
 filesize = os.path.getsize(filename)
 s = socket.socket()
